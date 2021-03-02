@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;500;700;900&display=swap');
+
+body{
+	font-family: 'Lato', sans-serif;
+	color: white;
+	margin: 0;
+	background-color: #2b0018;
+}
+
+/*Hieronder volgen de codes voor de fonts*/
+
+h1{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	font-size: 30px;
+  margin-top: 50px;
+}
+
+h2{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	font-size: 15px;
+	color: #8D8D8E;
+}
+
+h3{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+	font-size: 18px;
+	text-align: center;
+}
+
+a{
+  text-decoration: none;
+  color: #57565E;
+}
+
+.overlay a:hover:not(#active){
+  color: white;
+}
+
+#active{
+  color: white;
+}
+
+/*Hieronder volgt de code voor afbeeldingen*/
+
+#logo{
+	width: 150px;
+  margin-bottom: 30px;
+}
+
+/*Hieronder volgt de code voor de navigatie */
+
+i{
+	padding-right: 10px;
+}
+
+header{
+  margin-left: 200px;
+  padding: 1px 16px;
+}
+
+/*Hieronder de codes voor de layout van het dashboard*/
+#menu{
+  width: 200px;
+  position: fixed;
+}
+.card{
+	width: 500px;
+	background: rgba(0, 0, 0, 0.3);
+	padding: 20px;
+	margin-bottom: 20px;
+	border-radius: 15px;
+  display: inline-block;
+}
+
+
+
+/*Hieronder volgen de media queries*/
+@media screen and (max-width: 600px){
+  #menuicon{
+    margin-left: 20px;
+  }
+
+  .overlay{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+
+  .overlay-content{
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .overlay a{
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .overlay a:hover, .overlay a:focus{
+    color: white;
+  }
+
+  .overlay .closebtn{
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+
+  header{
+    margin-left: 20px;
+  }
+
+
+
+}
+
+@media screen and (max-height: 600px){
+  .overlay a{
+    font-size: 20px
+  }
+
+  .overlay .closebtn{
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+@media screen and (min-width: 601px){
+  #menuicon{
+      display: none;
+    }
+
+  .closebtn{
+    display: none;
+  }  
+
+  .overlay a{
+    float: left;
+    width: 200px;
+    font-size: 17px;
+    margin-top: 30px;
+    padding-left: 30px;
+  }
+
+  #menu{
+  	background-color: rgba(0,0,0, 0.3);
+  	height: 100%;
+  	margin-left: 0;
+  	margin-top: 0;
+  }
+
+}
+
+
+

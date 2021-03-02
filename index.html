@@ -1,17 +1,59 @@
 <!DOCTYPE html>
-<html lang="nl">
-	<head>
-		<meta charset="UTF-8" />
-		<title>gerrit</title>
-		<link type="text/css" href="styles/my_style.css" rel="stylesheet" />
-		<script type="text/javascript" src="scripts/jquery-1.9.1.min.js"></script>
-		<script type="text/javascript" src="scripts/my_scripts.js"></script>
-	</head>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dashboard | SpaceX</title>
+<link rel="stylesheet" href="styles/main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="script/script.js" defer></script>
+</head>
 	<body>
-		<section id="woonkamer">
-			<img id="background" src="images/background.jpg" />
-			<img id="gerrit" src="images/gerrit.png" />
-		</section>
-		<p>Spongebob Squarepants, Nickelodeon Animation Studios 1999</p>
+
+		<div id="menu">
+			<div id="myNav" class="overlay">
+			  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			  <div class="overlay-content">
+				  <a href="#"><img src="images/logo.png" id="logo"></a>
+				  <a href="#"><i class='fa'>&#xf2c2;</i>Profiel</a>
+				  <a href="#" id="active"><i class='fa'>&#xf135;</i>Dashboard</a>
+				  <a href="#"><i class='fa'>&#xf15b;</i>Documenten</a>
+				  <a href="#"><i class='fa'>&#xf0ad;</i>Instellingen</a>
+			  </div>
+			</div>
+			<span id="menuicon" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+		</div>
+		<header class="main">
+			<h1>Dashboard</h1>
+			<h2>Volg alle data van SpaceX hier.</h2>
+			<div class="dasboard">
+				
+				<div class="card">
+					<h3>Snelheid</h3>
+					<div id="chart_div" style="width: 400px; height: 120px;"></div>
+				</div>
+
+				<div class="card">
+					<h3>Afgelegde afstand</h3>
+					<canvas id="myLineChart"></canvas>
+				</div>
+				
+				<div class="card">
+					<h3>Snelheid</h3>
+					<canvas id="myChart"></canvas>
+				</div>
+				
+				<div class="card">
+					<h3>Consumptie</h3>
+					<canvas id="stackedBar"></canvas>
+				</div>
+				
+				<div class="card">
+					<h3>Bevolking</h3>
+					<canvas id="myDoughnutChart"></canvas>
+				</div>			
+			</div>
+		</header>
 	</body>
 </html>
