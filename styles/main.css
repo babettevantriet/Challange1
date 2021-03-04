@@ -5,7 +5,11 @@ body{
 	font-family: 'Lato', sans-serif;
 	color: white;
 	margin: 0;
-	background-color: #2b0018;
+	background-color: black;
+  background-image: url("../images/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 /*Hieronder volgen de codes voor de fonts*/
@@ -14,7 +18,7 @@ h1{
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 300;
 	font-size: 30px;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 h2{
@@ -26,14 +30,32 @@ h2{
 
 h3{
 	font-family: 'Montserrat', sans-serif;
-	font-weight: 500;
-	font-size: 18px;
-	text-align: center;
+	font-weight: 300;
+	font-size: 16px;
+}
+
+h4{
+  font-size: 15px;
+  font-weight: 500;
+  color: #57565E;
+  margin-bottom: -10px;
+}
+
+p{
+  font-size: 15px;
+  font-weight: 300;
+  color: #57565E;
 }
 
 a{
   text-decoration: none;
   color: #57565E;
+}
+
+#countdown{
+  color: white;
+  font-size: 20px;
+  text-align: center;
 }
 
 .overlay a:hover:not(#active){
@@ -42,6 +64,10 @@ a{
 
 #active{
   color: white;
+}
+
+.melding{
+  border-top: 1px solid #57565E;
 }
 
 /*Hieronder volgt de code voor afbeeldingen*/
@@ -67,18 +93,83 @@ header{
   width: 200px;
   position: fixed;
 }
-.card{
-	width: 500px;
+.cards{
 	background: rgba(0, 0, 0, 0.3);
 	padding: 20px;
-	margin-bottom: 20px;
 	border-radius: 15px;
   display: inline-block;
+
+}
+
+.dashboard{
+  margin-bottom: 30px;
+  display: grid;
+  grid-gap: 10px; 
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+  "card6 card6"
+  "card2 card2"
+  "card3 card3"
+  "card4 card4"
+  "card5 card5"
+  
+}
+
+/*.card1{
+  grid-area: card1;
+
+}*/
+
+.card2{
+  grid-area: card2;
+}
+
+.card3{
+  grid-area: card3;
+}
+
+.card4{
+  grid-area: card4;
+}
+
+.card5{
+  grid-area: card5;
+}
+
+.card6{
+  grid-area: card6;
+  background-image: url("../images/rodeplaneet.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 
-
 /*Hieronder volgen de media queries*/
+
+/*De layout voor de apple watch waar het menu verwijdert is en je enkel de charts kan zien*/
+@media screen and (max-width: 162px){
+  #menu{ 
+    display: none;
+   }
+
+   .dashboard{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      grid-template-areas: 
+      "card6 card6"
+      "card2 card2"
+      "card3 card3"
+      "card4 card4"
+      "card5 card5"
+  
+}
+
+
+  }
+
+/*De afmetingen voor de mobile telefoon*/
 @media screen and (max-width: 600px){
   #menuicon{
     margin-left: 20px;
@@ -128,6 +219,9 @@ header{
     margin-left: 20px;
   }
 
+  #countdown{
+    font-size: 30px;
+  }
 
 
 }
@@ -166,6 +260,82 @@ header{
   	height: 100%;
   	margin-left: 0;
   	margin-top: 0;
+  }
+
+  #countdown{
+    font-size: 40px;
+  }
+}
+
+/*Afmetingen voor de ipad*/
+
+@media screen and (min-width: 601px){
+    .dashboard{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px; 
+      grid-template-areas: 
+      "card6 card6"
+      "card3 card3"
+      "card2 card2"
+      "card4 card5"
+      }
+
+      .card4{
+        max-width: 300px;
+      }
+
+      .card5{
+        max-width: 300px;
+      }
+}
+
+/*afmetingen voor de laptop*/
+@media screen and (min-width: 1350px){
+  .dashboard{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-gap: 10px; 
+      grid-template-areas: 
+        "card2 card2 card6 card5"
+        "card2 card2 card6 card5"
+        "card4 card3 card3 card5"
+
+  }
+
+  #countdown{
+    font-size: 25px;
+    padding-top: 85px;
+  }
+
+  #myDoughnutChart{
+    margin-top: 150px;
+  }
+
+}
+
+@media screen and (min-width: 1919px){
+  .dashboard{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-gap: 10px; 
+      grid-template-areas: 
+        "card2 card2 card6 card6"
+        "card2 card2 card6 card6"
+        "card4 card3 card3 card5"
+
+  }
+
+  #countdown{
+    font-size: 60px;
+  }
+
+  .card4{
+        max-width: 500px;
+      }
+
+  #myDoughnutChart{
+    margin-top: 10px;
   }
 
 }

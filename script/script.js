@@ -1,3 +1,4 @@
+
 // Hieronder bevind zich de functie voor het hamburger menu. Wanneer 'open nav' 
 // wordt aangeklikt zal het menu over het gehele beeld geopent worden.
 function openNav() {
@@ -10,95 +11,43 @@ function closeNav() {
 
 
 
-// Hieronder bevind zich de data voor de snelheid, de js is afkomstig van Google charts
-      google.charts.load('current', {'packages':['gauge']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-
-        var data = google.visualization.arrayToDataTable([
-          ['Label', 'Value'],
-          ['Memory', 80],
-          ['CPU', 55],
-          ['Network', 68]
-        ]);
-
-        var options = {
-          width: 400, height: 120,
-          redFrom: 90, redTo: 100,
-          yellowFrom:75, yellowTo: 90,
-          minorTicks: 5
-        };
-
-        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
-
-        chart.draw(data, options);
-
-        setInterval(function() {
-          data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
-          chart.draw(data, options);
-        }, 13000);
-        setInterval(function() {
-          data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
-          chart.draw(data, options);
-        }, 5000);
-        setInterval(function() {
-          data.setValue(2, 1, 60 + Math.round(20 * Math.random()));
-          chart.draw(data, options);
-        }, 26000);
-      }
-
-
-
-
 // Hieronder bevinden de gegevens voor de Charts. De bron van de charts die 
 // gebruikt is, is google charts
+
+// Script voor de afgelegde afstand over de maanden
+
 var line = document.getElementById('myLineChart').getContext('2d'); 
 var myLineChart = new Chart(line, {
     type: 'line',
     data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        labels: ['Ferbuari', 'Maart', 'April', 'Mei', 'Juni', 'Juli','Augustus'],
         datasets: [{
             label: 'Kilometers x 10.000',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [0, 10, 5, 2, 20, 30, 45]
+            borderColor: '#66ccff',
+            data: [0, 20, 22, 35, 39, 48, 53]
         }]
     },
-    options: {}
+    options: {
+    }
 });
 
 
-var ctx = document.getElementById('myChart').getContext('2d');
-var chart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-            label: 'x 10.000',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-
-            data: [0, 10, 5, 2, 20, 30, 45]
-        }]
-    },
-    options: {}
-});
-
-
+// Script voor de chart voorraad
 
 var bar = document.getElementById('stackedBar').getContext('2d'); 
 var stackedBar = new Chart(bar, {
     type: 'bar',
     data: {
-        labels: ['Mannen', 'Vrouwen', 'Jongens', 'meisjes'],
+        labels: ['Groente', 'Fruit', 'Wijn', 'Bier', 'Water'],
         datasets: [{
-            label: 'My First dataset',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [3, 10, 5, 2]
+            label: 'Voorraad x 20.000',
+            backgroundColor: '#66ff99',
+            borderColor: '#66ff99',
+            data: [5, 30, 15, 12, 50]
         }]
     },
     options: {
+
         scales: {
             xAxes: [{
                 stacked: true
@@ -110,21 +59,53 @@ var stackedBar = new Chart(bar, {
     }
 });
 
-
+// Script voor de chart 'bevolking'
 
 var doughnut = document.getElementById('myDoughnutChart').getContext('2d'); 
 var myDoughnutChart = new Chart(doughnut, {
     type: 'doughnut',
     data: {
-        labels: ['0-3', '3-12', '12-18', '18-65','65+'],
+        labels: ['0-3 jr.', '3-12 jr.', '12-18 jr.', '18-65 jr.','65+'],
         datasets: [{
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
+            backgroundColor: ['#ff6680','#ffe666','#66ff99','#66ccff','#9966ff'],
+            borderColor: 'white',
             data: [5, 10, 8, 57,20]
         }]
     },
-    options: {}
+    options: {
+      legend: {
+            display: true,
+            position: 'bottom',
+            alignment: 'end',
+            labels: {
+                fontColor: 'white',
+            }
+            
+        }
+    }
 });
+
+
+// De javascript voor de afteller. Via W3 gevonden hoe hij werkt, vervolgens met eigen data ingevuld.
+
+var countDownDate = new Date("Dec 5, 2021 09:25:52").getTime();
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("countdown").innerHTML = days + "d " + hours + "u "
+  + minutes + "m " + seconds + "s ";
+
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "Geland";
+  }
+}, 1000);
 
 
 

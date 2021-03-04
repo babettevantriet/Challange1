@@ -27,32 +27,46 @@
 		<header class="main">
 			<h1>Dashboard</h1>
 			<h2>Volg alle data van SpaceX hier.</h2>
-			<div class="dasboard">
+			<div class="dashboard">
 				
-				<div class="card">
-					<h3>Snelheid</h3>
-					<div id="chart_div" style="width: 400px; height: 120px;"></div>
-				</div>
 
-				<div class="card">
+				<div class="grid-item card2 cards">
 					<h3>Afgelegde afstand</h3>
 					<canvas id="myLineChart"></canvas>
 				</div>
 				
-				<div class="card">
-					<h3>Snelheid</h3>
-					<canvas id="myChart"></canvas>
+				<div class="gr id-item card3 cards">
+					<h3>Meldingen</h3>
+					<div>
+						<h4>09:20 Baby aan boord</h4>
+						<p>We hebben een extra reiziger in SpaceX want Julia van Veen van vak A is bevallen!</p>
+					</div>
+					<div class="melding">
+						<h4>04:30 Meteoriet regen</h4>
+						<p>We zijn zojuist door een metoriet regen gevlogen</p>
+					</div>
+					<div class="melding">
+						<h4>00:00 Nog 300 dagen</h4>
+						<p>Nog 300 dagen tot we bij mars zijn</p>
+					</div>
+
+
 				</div>
 				
-				<div class="card">
-					<h3>Consumptie</h3>
+				<div class="grid-item card4 cards">
+					<h3>Voorraad</h3>
 					<canvas id="stackedBar"></canvas>
 				</div>
 				
-				<div class="card">
+				<div class="grid-item card5 cards">
 					<h3>Bevolking</h3>
-					<canvas id="myDoughnutChart"></canvas>
-				</div>			
+					<canvas id="myDoughnutChart" height="300"></canvas>
+				</div>	
+
+				<div class="grid-item card6 cards">
+					<h3>Aankomst: Rode Planeet</h3>
+					<p id="countdown"></p>
+				</div>		
 			</div>
 		</header>
 	</body>
