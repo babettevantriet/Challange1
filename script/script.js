@@ -42,7 +42,7 @@ var stackedBar = new Chart(bar, {
         datasets: [{
             label: 'Voorraad x 20.000',
             backgroundColor: '#66ff99',
-            borderColor: '#66ff99',
+            borderColor: '#white',
             data: [5, 30, 15, 12, 50]
         }]
     },
