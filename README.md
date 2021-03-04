@@ -1,4 +1,4 @@
-# Challange1
+# Challenge1
 This is the first assignment for XT2
 
 ## Media query's
